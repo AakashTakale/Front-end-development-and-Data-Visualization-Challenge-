@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>PieChart</title>
+<style type="text/css">
+body
+{
+  background-color: #ffb3b3;
+}
+.container
+{
+  margin: auto;
+    width: 68%;
+    border:3px solid #8AC007;
+    padding: 10px;
+}
+#backarrow
+{
+    margin-left: 120px;  
+}
+#account
+{
+  margin-left: 1000px;
+}
+#schedule{
+  margin-left: 120px;
+}
+#clipboard{
+  margin-left: 400px;
+}
+#analytics{
+  margin-left: 500px;
+}
+</style>
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Total'],
+          ['Gas', 1100],
+          ['Mutric Acid', 845],
+          ['Bicarb',  65],
+          ['Dicholor', 1040],
+          ['Soda Ash',    195],
+          ['Trichlor', 65]
+        ]);
+
+        var options = {
+          title: 'Total for Month = $3,310',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('pchart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <a id="backarrow" href="index.html" style="opacity: 1;"><img src="images/back_arrow.png" alt="Back arrow"></a>
+      <a id="account" href="index.html" style="opacity: 1;"><img src="images/account_settings.png" alt="Settings logo"></a>
+    </div>
+    <div class="container">
+     <div id="pchart_3d" style="width: 900px; height: 500px;"></div>
+    </div>
+    <div>
+      <a id="schedule" href="index.html" style="opacity: 1;"><img src="images/schedule.png" alt="Schedule logo"></a>
+      <a id="clipboard" style="opacity: 1;"><img src="images/Clipboard.png" alt="Clipboard logo"></a>
+      <a id="analytics" href="index.html" style="opacity: 1;"><img src="images/analytics.png" alt="Analytics logo"></a> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>ColumnChart</title>
+  <style type="text/css">
+  body
+{
+  background-color: #ffb3b3;
+}
+.container
+{
+  margin: auto;
+    width: 68%;
+    border:3px solid #8AC007;
+    padding: 10px;
+}
+#backarrow{
+  margin-left: 120px;  
+}
+#account{
+  margin-left: 1000px;
+}
+#schedule{
+  margin-left: 120px;
+}
+#clipboard{
+  margin-left: 400px;
+}
+#analytics{
+  margin-left: 500px;
+}
+</style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Month', 'Clients'],
+          ['January', 49],
+          ['February', 31],
+          ['March', 12],
+          ['April', 18],
+          ['May', 53],
+          ['June', 22],
+          ['July', 30],
+          ['August', 9],
+          ['September', 29],
+          ['October', 20],
+          ['November', 5],
+          ['December', 33]
+
+        ]);
+
+        var options = {
+          title: 'Total Number of Clients',
+          width: 900,
+          //legend: { position: 'none'},
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Month'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "60%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <a id="backarrow" href="index.html" style="opacity: 1;"><img src="images/back_arrow.png" alt="Back arrow"></a>
+      <a id="account" href="index.html" style="opacity: 1;"><img src="images/account_settings.png" alt="Settings logo"></a>
+    </div>
+    <div class="container">
+      <div id="top_x_div" style=" width: 900px; height: 500px; "></div>
+    </div>
+    <div>
+      <a id="schedule" href="index.html" style="opacity: 1;"><img src="images/schedule.png" alt="Schedule logo"></a>
+      <a id="clipboard" style="opacity: 1;"><img src="images/Clipboard.png" alt="Clipboard logo"></a>
+      <a id="analytics" href="index.html" style="opacity: 1;"><img src="images/analytics.png" alt="Analytics logo"></a> 
+    </div>
+  </body>
+</html>
